@@ -5,6 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joshua Bernard — Portfolio BTS SIO SISR</title>
+  <meta name="description"
+    content="Portfolio de Joshua Bernard, étudiant en BTS SIO option SISR à l'IPSSI SQY : réalisations en systèmes, réseaux et cybersécurité, certifications ANSSI et CNIL, veille technologique." />
+  <meta name="author" content="Joshua Bernard" />
+  <meta name="theme-color" content="#0a0f0d" />
+  <link rel="canonical" href="https://jojo-1008.github.io/portfolio/" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2300e676'/%3E%3Cpath d='M12 20s6-3 6-7.5V7l-6-2.2L6 7v5.5C6 17 12 20 12 20z' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E" />
+  <!-- Aperçu lors du partage du lien (LinkedIn, Discord…) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Joshua Bernard — Portfolio BTS SIO SISR" />
+  <meta property="og:description"
+    content="Systèmes, réseaux et cybersécurité : mes réalisations, certifications et dossiers de veille technologique." />
+  <meta property="og:url" content="https://jojo-1008.github.io/portfolio/" />
+  <meta property="og:image" content="https://jojo-1008.github.io/portfolio/apercus/lab-infra.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <style>
@@ -19,8 +35,8 @@
       --green-bg: rgba(0, 230, 118, 0.07);
       --green-bg2: rgba(0, 230, 118, 0.13);
       --text: #dff0e4;
-      --text-muted: #5e8566;
-      --text-dim: #3a5c42;
+      --text-muted: #7c9e84;
+      --text-dim: #5f8266;
     }
 
     *,
@@ -120,6 +136,49 @@
 
     .nav-cta:hover {
       opacity: 0.85;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Bouton menu (visible seulement sur petit écran) */
+    .nav-toggle {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .nav-toggle .ic-close,
+    nav.open .nav-toggle .ic-open {
+      display: none;
+    }
+
+    nav.open .nav-toggle .ic-close {
+      display: block;
+    }
+
+    /* Focus clavier visible */
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    .mcard:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
     }
 
     /* ===== LAYOUT ===== */
@@ -297,9 +356,9 @@
       color: #8899ff;
     }
 
-        .ctx-perso {
-      background: rgba(100, 130, 255, 0.12);
-      color: #8899ff;
+    .ctx-E6 {
+      background: rgba(255, 90, 70, 0.12);
+      color: #ff7a66;
     }
 
     /* ===== HERO ===== */
@@ -337,12 +396,12 @@
       margin-bottom: 0.4rem;
     }
 
-    .hero-tagline {
-      font-size: clamp(2rem, 4.5vw, 3.8rem);
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1.05;
-      margin-bottom: 2.2rem;
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0.6rem auto 2.2rem;
     }
 
     .hero-cta {
@@ -399,22 +458,6 @@
       gap: 0.55rem;
     }
 
-    .badge-icon {
-      width: 26px;
-      height: 26px;
-      border-radius: 7px;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .badge-icon svg {
-      width: 14px;
-      height: 14px;
-    }
-
     .badge-text {
       font-size: 0.78rem;
       font-weight: 700;
@@ -441,53 +484,6 @@
       margin-bottom: 0.9rem;
     }
 
-    .two-info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.9rem;
-      margin-top: 1.8rem;
-    }
-
-    .info-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.1rem;
-    }
-
-    .info-card-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 7px;
-      background: var(--green-bg2);
-      border: 1px solid rgba(0, 230, 118, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.6rem;
-    }
-
-    .info-card-icon svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--green);
-      fill: none;
-      stroke-width: 2;
-    }
-
-    .info-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.25rem;
-    }
-
-    .info-desc {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
     /* ENTREPRISES */
     .entreprises-list {
       display: flex;
@@ -510,34 +506,6 @@
 
     .entreprise-item:hover {
       background: var(--card2);
-    }
-
-    .entreprise-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 11px;
-      background: var(--card2);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .entreprise-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 4px;
-    }
-
-    .entreprise-logo svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--text-muted);
-      fill: none;
-      stroke-width: 1.5;
     }
 
     .entreprise-info {
@@ -603,12 +571,15 @@
       border-color: var(--green);
     }
 
-    /* MULTI-SELECT INFO */
-    .filter-hint {
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      margin-bottom: 1.5rem;
-      font-style: italic;
+    .chip-count {
+      font-size: 0.68rem;
+      font-weight: 700;
+      opacity: 0.7;
+      margin-left: 0.15rem;
+    }
+
+    .chip.empty:not(.on) {
+      opacity: 0.4;
     }
 
     .missions-grid {
@@ -631,10 +602,6 @@
       transform: translateY(-2px);
     }
 
-    .mcard.hidden {
-      display: none;
-    }
-
     .mcard-img {
       width: 100%;
       height: 160px;
@@ -650,6 +617,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: left top;
       display: block;
     }
 
@@ -703,22 +671,56 @@
       align-items: center;
     }
 
-    .doc-chip {
-      font-size: 0.7rem;
-      font-weight: 600;
+    .mcard-actions {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .mcard-actions > * {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .mcard-more {
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
-      background: var(--card2);
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.65rem;
-      border-radius: 8px;
+    }
+
+    .mcard-more summary {
       cursor: pointer;
-      transition: all 0.18s;
+      font-weight: 600;
+    }
+
+    .mcard-more summary:hover {
+      color: var(--green);
+    }
+
+    .mcard-more ul {
+      list-style: none;
+      margin-top: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .mcard-more a {
+      color: var(--text);
       text-decoration: none;
     }
 
-    .doc-chip:hover {
+    .mcard-more a:hover {
       color: var(--green);
-      border-color: rgba(0, 230, 118, 0.28);
+      text-decoration: underline;
+    }
+
+    .mgrid-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: 2rem 0;
     }
 
     /* ===== TABLEAU DE SYNTHÈSE ===== */
@@ -787,118 +789,6 @@
       flex-shrink: 0;
     }
 
-    /* Note CV */
-    .cv-note {
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--green-dim);
-      border-radius: 12px;
-      padding: 1rem 1.3rem;
-      margin-top: 1rem;
-    }
-
-    .cv-note p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .cv-note strong {
-      color: var(--text);
-    }
-
-    /* ===== DOSSIER E6 ===== */
-    .e6-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .e6-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-
-    .e6-card:hover {
-      border-color: rgba(0, 230, 118, 0.25);
-    }
-
-    .e6-cover {
-      width: 100%;
-      height: 130px;
-      background: var(--card2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .e6-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .e6-cover-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--card2), #0d1f15);
-    }
-
-    .e6-cover-placeholder svg {
-      width: 36px;
-      height: 36px;
-      stroke: var(--text-dim);
-      fill: none;
-      stroke-width: 1.2;
-    }
-
-    .e6-body {
-      padding: 1.2rem 1.4rem;
-    }
-
-    .e6-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-
-    .e6-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.3rem;
-    }
-
-    .e6-desc {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 1rem;
-    }
-
-    .e6-actions {
-      display: flex;
-      gap: 0.6rem;
-    }
-
-    /* ===== DÉVELOPPEMENT PRO ===== */
-    .devpro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-    }
-
     /* LAB */
     .lab-card {
       background: var(--card);
@@ -928,18 +818,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .lab-img-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      color: var(--text-dim);
     }
 
     .lab-badge {
@@ -1011,6 +889,11 @@
       margin-bottom: 1.5rem;
     }
 
+    .veille-sources.veille-tools {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 2.5rem;
+    }
+
     .vsrc {
       background: var(--card);
       border: 1px solid var(--border);
@@ -1072,20 +955,96 @@
       font-style: italic;
     }
 
-    .veille-focus {
+    .veille-docs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .vdoc {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 2rem 2.5rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: center;
-      transition: border-color 0.2s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .veille-focus:hover {
-      border-color: rgba(0, 230, 118, 0.22);
+    .vdoc:hover {
+      border-color: rgba(0, 230, 118, 0.28);
+      transform: translateY(-2px);
+    }
+
+    .vdoc-head {
+      --accent: 0, 230, 118;
+      padding: 1.4rem 1.6rem;
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: radial-gradient(circle at 100% 0%, rgba(var(--accent), 0.22), transparent 65%), var(--card2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .vdoc-head .vf-pill {
+      color: rgb(var(--accent));
+      background: rgba(var(--accent), 0.1);
+      border-color: rgba(var(--accent), 0.25);
+    }
+
+    .vdoc-red { --accent: 255, 90, 70; }
+    .vdoc-blue { --accent: 100, 140, 255; }
+
+    .vdoc-stat {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .vdoc-stat b {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: rgb(var(--accent));
+      line-height: 1.1;
+    }
+
+    .vdoc-body {
+      padding: 1.4rem 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .vdoc-date {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .vdoc .vf-title {
+      font-size: 1.08rem;
+    }
+
+    .vdoc .vf-desc {
+      font-size: 0.8rem;
+      flex: 1;
+    }
+
+    .vdoc-actions {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .vdoc-actions .btn-green {
+      flex: 1;
+      justify-content: center;
     }
 
     .vf-pill {
@@ -1127,73 +1086,148 @@
       text-decoration: underline;
     }
 
-    .vf-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      background: var(--green-bg2);
-      border: 1px solid rgba(0, 230, 118, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .vf-icon svg {
-      width: 36px;
-      height: 36px;
-      stroke: var(--green);
-      fill: none;
-      stroke-width: 1.5;
-    }
-
-    /* PROJET PRO */
+    /* PROJET PRO / RÉFÉRENTIEL : grilles 2 colonnes */
     .projet-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
 
-    .projet-block {
+    /* Panneaux (Projet pro, Référentiel) */
+    .panel {
+      --c: var(--green);
+      --c-bg: var(--green-bg2);
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .pblock-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 1.1rem;
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c), transparent);
     }
 
-    .pitem {
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.95rem 1.1rem;
-      margin-bottom: 0.65rem;
-      transition: border-color 0.18s;
+    .panel.orange { --c: #ff7832; --c-bg: rgba(255, 120, 50, 0.1); }
+    .panel.off { opacity: 0.38; --c: var(--text-dim); --c-bg: var(--card2); }
+    .panel.off::before { display: none; }
+    .panel.off .panel-title { color: var(--text-muted); }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
     }
 
-    .pitem:hover {
-      border-color: rgba(0, 230, 118, 0.18);
-    }
-
-    .pitem-title {
-      font-size: 0.88rem;
-      font-weight: 700;
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 800;
       color: #fff;
-      margin-bottom: 0.2rem;
     }
 
-    .pitem-desc {
-      font-size: 0.75rem;
+    .panel-sub {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--c);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .panel-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #000;
+      background: var(--green);
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--c-bg, var(--green-bg2));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-box svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--c, var(--green));
+      stroke-width: 2;
+    }
+
+    .icon-box.sm {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+    }
+
+    .icon-box.sm svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ref-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+
+    /* Listes de compétences du référentiel */
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      list-style: none;
+    }
+
+    .ref-list li {
+      --c: var(--green);
+      position: relative;
+      padding-left: 1.4rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
     }
+
+    .ref-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0.2rem;
+      top: -0.15rem;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--c);
+    }
+
+    .ref-list.orange li { --c: #ff7832; }
+    .ref-list.check li { color: var(--text); }
+    .ref-list.check li::before { content: "✓"; font-size: 0.85rem; top: 0; left: 0; }
+    .ref-list.off li { color: var(--text-dim); }
+    .ref-list.off li::before { content: "✕"; font-size: 0.8rem; top: 0; left: 0; --c: var(--text-dim); }
 
     /* SOCIAL */
     .social-grid {
@@ -1251,25 +1285,6 @@
     .scard-url {
       font-size: 0.7rem;
       color: var(--text-muted);
-    }
-
-    .contact-note {
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--green-dim);
-      border-radius: 12px;
-      padding: 1rem 1.3rem;
-      margin-top: 1.5rem;
-    }
-
-    .contact-note p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .contact-note strong {
-      color: var(--text);
     }
 
     /* ===== MODALE PDF ===== */
@@ -1433,24 +1448,10 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1000px) {
-      .devpro-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
     @media (max-width: 800px) {
 
       .about-grid,
       .projet-cols,
-      .devpro-grid {
-        grid-template-columns: 1fr;
-      }
-
-      #projet-pro-intro > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-      }
-
       .lab-grid {
         grid-template-columns: 1fr;
       }
@@ -1471,20 +1472,48 @@
       }
     }
 
-    @media (max-width: 600px) {
-      nav {
-        padding: 0 1rem;
+    /* Menu téléphone / tablette : le bouton remplace la liste de liens */
+    @media (max-width: 1100px) {
+      .nav-toggle {
+        display: flex;
       }
 
       .nav-links {
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+        padding: 0.8rem 1rem 1.2rem;
+        background: rgba(10, 15, 13, 0.98);
+        border-bottom: 1px solid var(--border);
         display: none;
+      }
+
+      nav.open .nav-links {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 0 1rem;
       }
 
       section {
         padding: 3rem 1rem;
       }
 
-      .veille-sources {
+      .veille-sources,
+      .veille-sources.veille-tools {
         grid-template-columns: 1fr;
       }
     }
@@ -1495,7 +1524,7 @@
 <body>
 
   <!-- ===== NAV ===== -->
-  <nav>
+  <nav id="nav" aria-label="Navigation principale">
     <a href="#accueil" class="nav-logo">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"
@@ -1505,7 +1534,7 @@
       </div>
       Joshua Bernard
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#projet">Projet Pro</a></li>
       <li><a href="#referentiel">Référentiel</a></li>
@@ -1515,7 +1544,16 @@
       <li><a href="#veille">Veille</a></li>
       <li><a href="#social">Réseau</a></li>
     </ul>
-    <a href="#social" class="nav-cta">Contact</a>
+    <div class="nav-right">
+      <a href="#social" class="nav-cta">Contact</a>
+      <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links"
+        aria-expanded="false" onclick="toggleNav()">
+        <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
   </nav>
 
   <main>
@@ -1528,7 +1566,9 @@
       <div
         style="min-height:calc(100vh - 62px - 10rem);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 0 4rem;">
         <div class="hero-pill">BTS SIO Option SISR</div>
-        <div class="hero-name">Joshua Bernard</div>
+        <h1 class="hero-name">Joshua Bernard</h1>
+        <p class="hero-sub">Je conçois, sécurise et maintiens des infrastructures systèmes &amp; réseaux,
+          avec la cybersécurité en ligne de mire.</p>
         <div class="hero-cta">
           <a href="#realisations" class="btn-white">Voir mes Réalisations</a>
           <a href="cv.pdf" target="_blank" class="btn-dark">Mon CV</a>
@@ -1542,7 +1582,7 @@
         <div class="photo-wrap">
           <div class="photo-box">
 
-            <img src="Image/Image profil.webp" alt="Joshua Bernard">
+            <img src="images/photo-profil.webp" alt="Photo de Joshua Bernard" loading="lazy">
 
           </div>
           <div class="photo-badge">
@@ -1554,7 +1594,7 @@
         </div>
 
         <div style="padding-top:0.5rem">
-          <h2 class="about-h">Je m'appelle Joshua Bernard, Je suis actuellement étudiant chez IPSSI SQY grande école
+          <h2 class="about-h">Je m'appelle Joshua Bernard, je suis actuellement étudiant à l'IPSSI SQY, grande école
             d'informatique.</h2>
           <p class="about-p">Actuellement en formation BTS SIO option SISR, je me suis spécialisé dans les solutions
             d'infrastructure, les systèmes et les réseaux. Je suis passionné d'informatique, d'automobile, de musique et
@@ -1578,6 +1618,13 @@
                 </div>
                 <div class="entreprise-period">Juil. 2025 — Oct. 2025</div>
               </div>
+              <div class="entreprise-item">
+                <div class="entreprise-info">
+                  <div class="entreprise-name">Prescom</div>
+                  <div class="entreprise-meta">Technicien informatique · Stage BTS SIO SISR (deux sites)</div>
+                </div>
+                <div class="entreprise-period">Avr. 2026 — Juin 2026</div>
+              </div>
             </div>
           </div>
 
@@ -1598,11 +1645,10 @@
       <h2 class="sec-title">Mon Projet <span style="color:var(--green)">Professionnel</span></h2>
       <p class="sec-sub">Ma trajectoire, mes ambitions et comment mes certifications s'inscrivent dans mon parcours vers la cybersécurité.</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div class="projet-cols">
 
         <!-- Carte Objectif -->
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),transparent);"></div>
+        <div class="panel">
           <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.4rem;">
             <div style="width:40px;height:40px;border-radius:11px;background:var(--green-bg2);border:1px solid rgba(0,230,118,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
@@ -1630,8 +1676,7 @@
         <div style="display:flex;flex-direction:column;gap:1.5rem;">
 
           <!-- Bloc certifications dans le projet -->
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(0,230,118,0.4),transparent);"></div>
+          <div class="panel">
             <div style="font-size:0.68rem;font-weight:700;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">Certifications &amp; leur rôle</div>
             <div style="display:flex;flex-direction:column;gap:0.85rem;">
 
@@ -1678,241 +1723,89 @@
     <div class="divider"></div>
 
 
-          <!-- ===========================
+    <!-- ===========================
        RÉFÉRENTIEL BTS SIO
   ============================ -->
-      <section id="referentiel">
-        <div class="eyebrow">Critères officiels SIEC</div>
-        <h2 class="sec-title">Référentiel <span style="color:var(--green)">BTS SIO</span></h2>
-        <p class="sec-sub">Les compétences ci-dessous sont celles que j’ai réellement mises en pratique dans mes réalisations, selon le contexte professionnel, scolaire et personnel.</p>
+    <section id="referentiel">
+      <div class="eyebrow">Critères officiels SIEC</div>
+      <h2 class="sec-title">Référentiel <span style="color:var(--green)">BTS SIO</span></h2>
+      <p class="sec-sub">Les compétences ci-dessous sont celles que j’ai réellement mises en pratique dans mes réalisations, selon le contexte professionnel, scolaire et personnel.</p>
 
-        <!-- TRONC COMMUN -->
-        <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:1.5rem;">
-          <div
-            style="width:28px;height:28px;border-radius:7px;background:var(--green-bg2);border:1px solid rgba(0,230,118,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
+      <!-- TRONC COMMUN -->
+      <div class="ref-heading">
+        <div class="icon-box sm">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
+        </div>
+        TRONC COMMUN
+      </div>
+
+      <div class="projet-cols" style="margin-bottom:3rem;">
+        <!-- BLOC 1 — SUPPORT & SERVICES -->
+        <div class="panel">
+          <div class="panel-head">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" /></svg></div>
+            <div><div class="panel-title">SUPPORT &amp; SERVICES</div><div class="panel-sub">Bloc 1</div></div>
           </div>
-          <span style="font-size:0.95rem;font-weight:800;color:#fff;letter-spacing:0.04em;">TRONC COMMUN</span>
+          <ul class="ref-list">
+            <li>Gérer le patrimoine informatique et l'inventaire des ressources</li>
+            <li>Répondre aux incidents et aux demandes d'assistance en environnement réel</li>
+            <li>Mettre à disposition des services et organiser le travail en mode projet</li>
+          </ul>
         </div>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:3rem;">
-
-          <!-- BLOC 1 — SUPPORT & SERVICES -->
-          <div
-            style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;">
-            <div
-              style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),transparent);">
-            </div>
-            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-              <div
-                style="width:44px;height:44px;border-radius:12px;background:var(--green-bg2);border:1px solid rgba(0,230,118,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
-                  <path d="M18 20V10" />
-                  <path d="M12 20V4" />
-                  <path d="M6 20v-6" />
-                </svg>
-              </div>
-              <div>
-                <div style="font-size:1rem;font-weight:800;color:#fff;">SUPPORT &amp; SERVICES</div>
-                <div
-                  style="font-size:0.62rem;font-weight:700;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;">
-                  Bloc 1</div>
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:0.8rem;">
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                Gérer le patrimoine informatique et l'inventaire des ressources
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                Répondre aux incidents et aux demandes d'assistance en environnement réel
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                Mettre à disposition des services et organiser le travail en mode projet
-              </div>
-            </div>
+        <!-- BLOC 3 — CYBERSÉCURITÉ -->
+        <div class="panel orange">
+          <div class="panel-head">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div>
+            <div><div class="panel-title">CYBERSÉCURITÉ</div><div class="panel-sub">Bloc 3</div></div>
           </div>
+          <ul class="ref-list orange">
+            <li>Protéger les données à caractère personnel et appliquer la conformité RGPD</li>
+            <li>Sécuriser les équipements, les accès et les usages utilisateurs</li>
+            <li>Assurer la continuité de service et la disponibilité des services</li>
+          </ul>
+        </div>
+      </div>
 
-          <!-- BLOC 3 — CYBERSÉCURITÉ -->
-          <div
-            style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;">
-            <div
-              style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(255,120,50,0.8),transparent);">
+      <!-- SPÉCIALITÉS -->
+      <div class="ref-heading">
+        <div class="icon-box sm">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><path d="M6 21V9a9 9 0 0 0 9 9" /></svg>
+        </div>
+        LES SPÉCIALITÉS (BLOC 2)
+      </div>
+
+      <div class="projet-cols">
+        <!-- SISR — MON OPTION -->
+        <div class="panel" style="border-color:rgba(0,230,118,0.35);">
+          <div class="panel-badge">Mon option</div>
+          <div class="panel-head">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="8" height="6" rx="1" /><rect x="14" y="2" width="8" height="6" rx="1" /><rect x="8" y="16" width="8" height="6" rx="1" /><path d="M6 8v5h12V8M12 13v3" /></svg>
             </div>
-            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-              <div
-                style="width:44px;height:44px;border-radius:12px;background:rgba(255,120,50,0.1);border:1px solid rgba(255,120,50,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff7832" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <div>
-                <div style="font-size:1rem;font-weight:800;color:#fff;">CYBERSÉCURITÉ</div>
-                <div
-                  style="font-size:0.62rem;font-weight:700;color:#ff7832;letter-spacing:0.15em;text-transform:uppercase;">
-                  Bloc 3</div>
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:0.8rem;">
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff7832" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                Protéger les données à caractère personnel et appliquer la conformité RGPD
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff7832" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                Sécuriser les équipements, les accès et les usages utilisateurs
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-muted);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff7832" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                Assurer la continuité de service et la disponibilité des services
-              </div>
-            </div>
+            <div><div class="panel-title">SPÉCIALITÉ SISR</div><div class="panel-sub">Systèmes &amp; Réseaux</div></div>
           </div>
-
+          <ul class="ref-list check">
+            <li>Concevoir une solution d'infrastructure réseau adaptée à un contexte métier</li>
+            <li>Installer, tester et sécuriser l'infrastructure avant déploiement</li>
+            <li>Exploiter, dépanner et documenter les services mis à disposition</li>
+          </ul>
         </div>
 
-        <!-- SPÉCIALITÉS -->
-        <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:1.5rem;">
-          <div
-            style="width:28px;height:28px;border-radius:7px;background:var(--green-bg2);border:1px solid rgba(0,230,118,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
-              <circle cx="18" cy="18" r="3" />
-              <circle cx="6" cy="6" r="3" />
-              <path d="M6 21V9a9 9 0 0 0 9 9" />
-            </svg>
+        <!-- SLAM — GRISÉ -->
+        <div class="panel off">
+          <div class="panel-head">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg></div>
+            <div><div class="panel-title">SPÉCIALITÉ SLAM</div><div class="panel-sub">Développement logiciel</div></div>
           </div>
-          <span style="font-size:0.95rem;font-weight:800;color:#fff;letter-spacing:0.04em;">LES SPÉCIALITÉS (BLOC
-            2)</span>
+          <ul class="ref-list off">
+            <li>Concevoir et développer une solution applicative</li>
+            <li>Assurer la maintenance corrective ou évolutive</li>
+            <li>Gérer les données (Conception SGBD)</li>
+          </ul>
         </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
-
-          <!-- SISR — MON OPTION -->
-          <div
-            style="background:var(--card);border:1px solid rgba(0,230,118,0.35);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;">
-            <div
-              style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),transparent);">
-            </div>
-            <div
-              style="position:absolute;top:1rem;right:1rem;font-size:0.6rem;font-weight:700;color:#000;background:var(--green);padding:0.22rem 0.65rem;border-radius:999px;letter-spacing:0.1em;text-transform:uppercase;">
-              Mon option</div>
-            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-              <div
-                style="width:44px;height:44px;border-radius:12px;background:var(--green-bg2);border:1px solid rgba(0,230,118,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
-                  <rect x="2" y="2" width="8" height="6" rx="1" />
-                  <rect x="14" y="2" width="8" height="6" rx="1" />
-                  <rect x="8" y="16" width="8" height="6" rx="1" />
-                  <line x1="6" y1="8" x2="6" y2="13" />
-                  <line x1="18" y1="8" x2="18" y2="13" />
-                  <line x1="6" y1="13" x2="18" y2="13" />
-                  <line x1="12" y1="13" x2="12" y2="16" />
-                </svg>
-              </div>
-              <div>
-                <div style="font-size:1rem;font-weight:800;color:#fff;">SPÉCIALITÉ SISR</div>
-                <div
-                  style="font-size:0.62rem;font-weight:700;color:var(--green);letter-spacing:0.15em;text-transform:uppercase;">
-                  Systèmes &amp; Réseaux</div>
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:0.8rem;">
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                Concevoir une solution d'infrastructure réseau adaptée à un contexte métier
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                Installer, tester et sécuriser l'infrastructure avant déploiement
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                Exploiter, dépanner et documenter les services mis à disposition
-              </div>
-            </div>
-          </div>
-
-          <!-- SLAM — GRISÉ -->
-          <div
-            style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;opacity:0.38;">
-            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-              <div
-                style="width:44px;height:44px;border-radius:12px;background:var(--card2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-              <div>
-                <div style="font-size:1rem;font-weight:800;color:var(--text-muted);">SPÉCIALITÉ SLAM</div>
-                <div
-                  style="font-size:0.62rem;font-weight:700;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;">
-                  Développement logiciel</div>
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:0.8rem;">
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-dim);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="2"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-                Concevoir et développer une solution applicative
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-dim);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="2"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-                Assurer la maintenance corrective ou évolutive
-              </div>
-              <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--text-dim);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="2"
-                  style="flex-shrink:0;margin-top:2px;">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-                Gérer les données (Conception SGBD)
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      </div>
+    </section>
 
       <div class="divider"></div>
 
@@ -1928,7 +1821,7 @@
       <div class="doc-band" style="margin-bottom:1.2rem;">
         <div class="doc-band-inner">
           <div class="doc-band-preview">
-            <img src="Aperçu/Aperçu-cv.png" alt="Aperçu CV">
+            <img src="apercus/cv.jpg" alt="Aperçu du CV de Joshua Bernard" loading="lazy">
           </div>
           <div class="doc-band-content">
             <div>
@@ -1947,15 +1840,15 @@
       <div class="doc-band">
         <div class="doc-band-inner">
           <div class="doc-band-preview">
-            <img src="Aperçu/Aperçu-grille-eval-modifier.png" alt="Aperçu grille d'évaluation">
+            <img src="apercus/grille-eval.jpg" alt="Aperçu de la grille d'évaluation BTS SIO" loading="lazy">
           </div>
           <div class="doc-band-content">
             <div>
               <div class="doc-band-title">Grille d'évaluation BTS SIO</div>
-              <div class="doc-band-meta">Grille d'aide à l'évaluation · ANNEXE VI-3 · PDF</div>
+              <div class="doc-band-meta">Grille d'aide à l'évaluation · ANNEXE VI-3 · PNG</div>
             </div>
             <div class="doc-band-actions">
-              <a href="Image/GRILLE_EVAL_TABLEAU_SYNTHESE_Modifier.png" target="_blank"
+              <a href="images/grille-eval-tableau-synthese.png" download
                 class="btn-green">Télécharger</a>
             </div>
           </div>
@@ -1977,25 +1870,25 @@
       <!-- FILTRES CONTEXTE -->
       <div class="filter-label">Contexte</div>
       <div class="filter-row" id="ctx-row">
-        <button class="chip on" onclick="fCtx(this,'all')">Tout</button>
-        <button class="chip" onclick="fCtx(this,'pro')">Pro</button>
-        <button class="chip" onclick="fCtx(this,'ecole')">École</button>
-        <button class="chip" onclick="fCtx(this,'perso')">Perso</button>
-        <button class="chip" onclick="fCtx(this,'E6')">E6</button>
-        <button class="chip" onclick="fCtx(this,'certif')">Certifications</button>
+        <button class="chip on" data-filter="ctx" data-val="all">Tout</button>
+        <button class="chip" data-filter="ctx" data-val="pro">Pro</button>
+        <button class="chip" data-filter="ctx" data-val="ecole">École</button>
+        <button class="chip" data-filter="ctx" data-val="perso">Perso</button>
+        <button class="chip" data-filter="ctx" data-val="E6">E6</button>
+        <button class="chip" data-filter="ctx" data-val="certif">Certifications</button>
       </div>
 
-      <!-- FILTRES COMPÉTENCES — MULTI-SELECT -->
-      <div class="filter-label">Compétences <span
-          style="font-weight:400;color:var(--text-dim);letter-spacing:0">(sélection multiple possible)</span></div>
+      <!-- FILTRES COMPÉTENCES — un seul choix à la fois -->
+      <div class="filter-label">Compétences</div>
       <div class="filter-row" id="comp-row">
-        <button class="chip on" onclick="fComp(this,'patrimoine')">Gérer le patrimoine</button>
-        <button class="chip on" onclick="fComp(this,'incidents')">Répondre aux incidents</button>
-        <button class="chip on" onclick="fComp(this,'service')">Mettre à disposition un service</button>
-        <button class="chip on" onclick="fComp(this,'projet')">Travailler en mode projet</button>
-        <button class="chip on" onclick="fComp(this,'securite')">Sécuriser les équipements</button>
-        <button class="chip on" onclick="fComp(this,'conformite')">Protéger les données</button>
-        <button class="chip on" onclick="fComp(this,'certif')">Certification</button>
+        <button class="chip on" data-filter="comp" data-val="all">Toutes</button>
+        <button class="chip" data-filter="comp" data-val="patrimoine">Gérer le patrimoine</button>
+        <button class="chip" data-filter="comp" data-val="incidents">Répondre aux incidents</button>
+        <button class="chip" data-filter="comp" data-val="service">Mettre à disposition un service</button>
+        <button class="chip" data-filter="comp" data-val="projet">Travailler en mode projet</button>
+        <button class="chip" data-filter="comp" data-val="securite">Sécuriser les équipements</button>
+        <button class="chip" data-filter="comp" data-val="conformite">Protéger les données</button>
+        <button class="chip" data-filter="comp" data-val="certif">Certification</button>
       </div>
 
       <div class="missions-grid" id="mgrid">
@@ -2003,9 +1896,7 @@
         <!-- PATRIMOINE 1 -->
         <div class="mcard" data-ctx="ecole" data-comp="patrimoine service">
           <div class="mcard-img">
-            <div class="mcard-img-placeholder">
-              <img src="Image/Réseau image.png" alt="Schéma réseau">
-            </div>
+            <img src="apercus/schema-reseau.jpg" alt="Schéma réseau de l'infrastructure virtuelle du TP" loading="lazy">
             <div class="ctx-pill ctx-ecole">École</div>
           </div>
           <div class="mcard-body">
@@ -2018,60 +1909,133 @@
           </div>
         </div>
 
-        <!-- Certification 1 -->
-        <div class="mcard" data-ctx="certif" data-comp="certif conformite securite">
+        <!-- TP1 — PFSENSE -->
+        <div class="mcard" data-ctx="ecole" data-comp="service securite" data-doc="tp1">
           <div class="mcard-img">
-            <div class="mcard-img-placeholder">
-              <img src="Aperçu/Aperçu Certif Secnum.png" alt="certif Secnum">
-            </div>
-            <div class="ctx-pill ctx-ecole">Certification</div>
+            <img src="apercus/doc-tp1.jpg" alt="Documentation TP1 : installation et configuration de pfSense" loading="lazy">
+            <div class="ctx-pill ctx-ecole">École</div>
           </div>
           <div class="mcard-body">
-            <div class="mcard-comp">Certification ANSSI · Sécuriser les usages</div>
-            <div class="mcard-title">Certification ANSSI</div>
-            <div class="mcard-desc">Certification ANSSI</div>
+            <div class="mcard-comp">Mettre à disposition un service · Sécuriser les équipements</div>
+            <div class="mcard-title">TP1 — Pare-feu pfSense sous VirtualBox</div>
+            <div class="mcard-desc">Création de la VM, installation de pfSense, configuration des interfaces et de l'adressage
+              des zones USER, VIP, SRV et DMZ, puis tests réseau.</div>
             <div class="mcard-foot">
-              <div class="tags"><span class="tag">SIEC</span><span class="tag">Certif</span><span
-                  class="tag">ANSSI</span></div>
-              <a href="#" target="_blank" class="doc-chip">Doc</a>
+              <div class="tags"><span class="tag">pfSense</span><span class="tag">VirtualBox</span><span class="tag">Adressage IP</span></div>
+            </div>
+            <div class="mcard-actions">
+              <button class="btn-outline" type="button" onclick="openModal('tp1')">Lire la doc</button>
+              <a href="documentations/tp1.pdf" download class="btn-green">Télécharger</a>
             </div>
           </div>
         </div>
 
-        <!-- Certification 2 -->
-        <div class="mcard" data-ctx="certif" data-comp="certif conformite securite">
+        <!-- TP2 — DNS / DHCP -->
+        <div class="mcard" data-ctx="ecole" data-comp="service incidents" data-doc="tp2">
           <div class="mcard-img">
-            <div class="mcard-img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5">
-                <img src="Aperçu/Aperçu certif CNIL.png" alt="certif CNIL">
-              </svg>
-            </div>
-            <div class="ctx-pill ctx-ecole">Certification</div>
+            <img src="apercus/doc-tp2.jpg" alt="Documentation TP2 : services DNS et DHCP sous Windows Server 2019" loading="lazy">
+            <div class="ctx-pill ctx-ecole">École</div>
           </div>
           <div class="mcard-body">
-            <div class="mcard-comp">Certification RGPD · Protéger les données</div>
-            <div class="mcard-title">Certification RGPD</div>
-            <div class="mcard-desc">Certification RGPD</div>
+            <div class="mcard-comp">Mettre à disposition un service · Répondre aux incidents</div>
+            <div class="mcard-title">TP2 — DNS et DHCP sous Windows Server 2019</div>
+            <div class="mcard-desc">Configuration en PowerShell : IP statique, rôles DNS et DHCP, redirecteurs, étendues,
+              relais DHCP sur pfSense, autorisation dans l'AD et résolution d'un problème de réservation côté Linux.</div>
             <div class="mcard-foot">
-              <div class="tags"><span class="tag">Tag 1</span><span class="tag">Tag 2</span></div>
-              <a href="#" target="_blank" class="doc-chip">Doc</a>
+              <div class="tags"><span class="tag">Windows Server</span><span class="tag">PowerShell</span><span class="tag">DNS</span><span class="tag">DHCP</span></div>
+            </div>
+            <div class="mcard-actions">
+              <button class="btn-outline" type="button" onclick="openModal('tp2')">Lire la doc</button>
+              <a href="documentations/tp2.pdf" download class="btn-green">Télécharger</a>
             </div>
           </div>
         </div>
 
-        <!--Mise en place d’une connexion wifi plus sécurisé -->
+        <!-- TP3 — ACTIVE DIRECTORY -->
+        <div class="mcard" data-ctx="ecole" data-comp="service securite patrimoine" data-doc="tp3">
+          <div class="mcard-img">
+            <img src="apercus/doc-tp3.jpg" alt="Documentation TP3 : Active Directory et intégration des clients" loading="lazy">
+            <div class="ctx-pill ctx-ecole">École</div>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-comp">Mettre à disposition un service · Sécuriser les accès</div>
+            <div class="mcard-title">TP3 — Active Directory et clients Windows / Debian</div>
+            <div class="mcard-desc">Installation d'AD DS et DNS, DHCP intégré à l'AD, zone DNS inverse, création d'utilisateurs,
+              jonction au domaine d'un client Windows 10 et d'un client Debian, groupes de sécurité.</div>
+            <div class="mcard-foot">
+              <div class="tags"><span class="tag">Active Directory</span><span class="tag">Debian</span><span class="tag">Windows 10</span></div>
+            </div>
+            <div class="mcard-actions">
+              <button class="btn-outline" type="button" onclick="openModal('tp3')">Lire la doc</button>
+              <a href="documentations/tp3.pdf" download class="btn-green">Télécharger</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certification ANSSI -->
+        <div class="mcard" data-ctx="certif" data-comp="certif securite" data-doc="secnum">
+          <div class="mcard-img">
+            <img src="apercus/certif-secnum.jpg" alt="Attestation SecNumacadémie de l'ANSSI" loading="lazy">
+            <div class="ctx-pill ctx-ecole">Certification</div>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-comp">Certification ANSSI · Sécuriser les équipements</div>
+            <div class="mcard-title">SecNumacadémie — ANSSI</div>
+            <div class="mcard-desc">MOOC de l'ANSSI validé en janvier 2026 : panorama de la SSI (86 %), sécurité de
+              l'authentification (92 %), sécurité sur Internet (88 %) et sécurité du poste de travail et nomadisme (92 %).</div>
+            <div class="mcard-foot">
+              <div class="tags"><span class="tag">ANSSI</span><span class="tag">SSI</span><span class="tag">Authentification</span></div>
+            </div>
+            <div class="mcard-actions">
+              <button class="btn-outline" type="button" onclick="openModal('secnum')">Voir</button>
+              <a href="certifications/certificat-secnum.pdf" download class="btn-green">Télécharger</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certification CNIL -->
+        <div class="mcard" data-ctx="certif" data-comp="certif conformite" data-doc="cnil">
+          <div class="mcard-img">
+            <img src="apercus/certif-cnil.jpg" alt="Certificat de l'Atelier RGPD de la CNIL" loading="lazy">
+            <div class="ctx-pill ctx-ecole">Certification</div>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-comp">Certification CNIL · Protéger les données</div>
+            <div class="mcard-title">Atelier RGPD — CNIL</div>
+            <div class="mcard-desc">Formation de la CNIL en 6 modules : notions clés du RGPD, principes de la protection des
+              données, responsabilités des acteurs, DPO et outils de conformité, collectivités territoriales, travail et
+              données personnelles.</div>
+            <div class="mcard-foot">
+              <div class="tags"><span class="tag">RGPD</span><span class="tag">CNIL</span><span class="tag">Conformité</span></div>
+            </div>
+            <div class="mcard-actions">
+              <button class="btn-outline" type="button" onclick="openModal('cnil')">Voir</button>
+              <a href="certifications/certificat-cnil.pdf" download class="btn-green">Télécharger</a>
+            </div>
+            <details class="mcard-more">
+              <summary>Attestations des 6 modules</summary>
+              <ul>
+                <li><a href="certifications/cnil/module-1-rgpd-notions-cles.pdf" target="_blank">Module 1 — Le RGPD et ses notions clés</a></li>
+                <li><a href="certifications/cnil/module-2-principes-protection-donnees.pdf" target="_blank">Module 2 — Les principes de la protection des données</a></li>
+                <li><a href="certifications/cnil/module-3-responsabilites-acteurs.pdf" target="_blank">Module 3 — Les responsabilités des acteurs</a></li>
+                <li><a href="certifications/cnil/module-4-dpo-outils-conformite.pdf" target="_blank">Module 4 — Le DPO et les outils de la conformité</a></li>
+                <li><a href="certifications/cnil/module-5-collectivites-territoriales.pdf" target="_blank">Module 5 — Les collectivités territoriales</a></li>
+                <li><a href="certifications/cnil/module-6-travail-donnees-personnelles.pdf" target="_blank">Module 6 — Travail et données personnelles</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <!-- Wifi sécurisé -->
         <div class="mcard" data-ctx="pro" data-comp="incidents securite service">
           <div class="mcard-img">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Image/logo-wifi.webp" alt="Aperçu-doc-prescom" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
-            <div class="ctx-pill ctx-pro">Pro</div>
-          </div>
+            <img src="images/logo-wifi.webp" alt="Mise en place d'un Wi-Fi sécurisé avec RADIUS" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Répondre aux incidents · Sécuriser les équipements</div>
-            <div class="mcard-title">Mise en place d’une connexion wifi plus sécurisé sur le deuxième site avec double-authentification</div>
-            <div class="mcard-desc">Mise en place d’une connexion wifi plus sécurisé sur le deuxième site, avec un protocole Radius chapv2, PEAP/EAP. Administration du service réseau du site.</div>
+            <div class="mcard-title">Mise en place d'une connexion Wi-Fi plus sécurisée sur le deuxième site avec double authentification</div>
+            <div class="mcard-desc">Mise en place d'une connexion Wi-Fi plus sécurisée sur le deuxième site, avec le protocole RADIUS (MS-CHAPv2, PEAP/EAP). Administration du service réseau du site.</div>
             <div class="mcard-foot">
               <div class="tags"><span class="tag">Réseau</span><span class="tag">Stage</span><span
                   class="tag">PEAP/EAP</span></div>
@@ -2079,22 +2043,19 @@
           </div>
         </div>
 
-        <!--Prise en charge de ticket de demande d'assistance -->
+        <!-- Tickets d'assistance -->
         <div class="mcard" data-ctx="pro" data-comp="incidents service">
           <div class="mcard-img">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Image/prescom logo fond blanc.webp" alt="Aperçu-doc-prescom" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
-            <div class="ctx-pill ctx-pro">Pro</div>
-          </div>
+            <img src="images/logo-prescom-blanc.webp" alt="Logo Prescom — prise en charge des tickets d'assistance" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Répondre aux incidents</div>
-            <div class="mcard-title">Prise en charge de ticket de demande d’assistance physique et à distance. </div>
-            <div class="mcard-desc">Traitement et résolution de tickets d'incidents en stage, prise de contact avec l'utilisateur : diagnostic,
-              intervention sur poste ou a distance, clôture. Diagnostique et intervention sur des ordinateur d’employé. Remplacement de pièces défectueuses.</div>
+            <div class="mcard-title">Prise en charge de tickets de demande d'assistance physique et à distance</div>
+            <div class="mcard-desc">Traitement et résolution de tickets d'incidents en stage : prise de contact avec l'utilisateur, diagnostic,
+              intervention sur poste ou à distance, clôture. Diagnostic et intervention sur des ordinateurs d'employés. Remplacement de pièces défectueuses.</div>
             <div class="mcard-foot">
-              <div class="tags"><span class="tag">Tickets</span><span class="tag">assistance</span><span
+              <div class="tags"><span class="tag">Tickets</span><span class="tag">Assistance</span><span
                   class="tag">Stage</span></div>
             </div>
           </div>
@@ -2103,16 +2064,13 @@
         <!-- INVENTAIRE -->
         <div class="mcard" data-ctx="pro" data-comp="patrimoine service">
           <div class="mcard-img">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Image/prescom logo fond blanc.webp" alt="Aperçu-doc-prescom" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
-            <div class="ctx-pill ctx-pro">Pro</div>
-          </div>
+            <img src="images/logo-prescom-blanc.webp" alt="Logo Prescom — inventaire du parc informatique" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Gérer le patrimoine · Inventaire</div>
-            <div class="mcard-title">Mise en place et mise à jour de l’inventaire des outils de l’entreprise</div>
-            <div class="mcard-desc">Mise en place et mise à jour de l’inventaire des outils de l’entreprise ( Pack Office, licence Anti-virus, ordinateur, souris, téléphone) des employés des deux sites.</div>
+            <div class="mcard-title">Mise en place et mise à jour de l'inventaire des outils de l'entreprise</div>
+            <div class="mcard-desc">Mise en place et mise à jour de l'inventaire des outils de l'entreprise (Pack Office, licences antivirus, ordinateurs, souris, téléphones) des employés des deux sites.</div>
             <div class="mcard-foot">
               <div class="tags"><span class="tag">Inventaire</span><span class="tag">Excel</span><span
                   class="tag">Stage</span></div>
@@ -2122,78 +2080,78 @@
 
         <!-- CREATION DOCUMENTATION -->
         <div class="mcard" data-ctx="pro" data-comp="service projet">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Aperçu/Aperçu-doc-prescom.png" alt="Aperçu-doc-prescom" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
+          <div class="mcard-img">
+            <img src="apercus/doc-prescom.jpg" alt="Aperçu de la documentation technique CloneZilla" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Mettre à disposition un service · Travailler en mode projet</div>
             <div class="mcard-title">Création d'une documentation technique</div>
-            <div class="mcard-desc">Ecriture d'une documentation technique pour l'installation et l'utilisation de CloneZilla avec un disque dur.</div>
+            <div class="mcard-desc">Écriture d'une documentation technique pour l'installation et l'utilisation de CloneZilla avec un disque dur.</div>
             <div class="mcard-foot">
               <div class="tags"><span class="tag">Word</span><span class="tag">CloneZilla</span><span class="tag">Rufus</span><span class="tag">DOC</span></div>
             </div>
           </div>
         </div>
 
-                <!-- PREPARATION MACHINE UTILISATEUR -->
+        <!-- PREPARATION MACHINE UTILISATEUR -->
         <div class="mcard" data-ctx="pro" data-comp="patrimoine incidents service">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Image/image-réparation-PC.webp" alt="Aperçu-doc-prescom" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
+          <div class="mcard-img">
+            <img src="images/reparation-pc.webp" alt="Préparation et reconditionnement d'un ordinateur" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Gérer le patrimoine · Répondre aux incidents</div>
             <div class="mcard-title">Préparation des machines utilisateurs</div>
-            <div class="mcard-desc">Préparation des machines de nouveaux utilisateurs, reconditionnement d'anciennes machines pour des nouveaux utilisateurs (stagiaire).</div>
+            <div class="mcard-desc">Préparation des machines de nouveaux utilisateurs, reconditionnement d'anciennes machines pour de nouveaux utilisateurs (stagiaires).</div>
             <div class="mcard-foot">
-              <div class="tags"><span class="tag">préparation</span><span class="tag">Technicien</span><span class="tag">Reconditionnement</span><span class="tag">Réparation</span></div>
+              <div class="tags"><span class="tag">Préparation</span><span class="tag">Technicien</span><span class="tag">Reconditionnement</span><span class="tag">Réparation</span></div>
             </div>
           </div>
         </div>
 
-          <!-- Administrations du logiciel anti-virus de l'entreprise -->
+        <!-- Administration de l'antivirus -->
         <div class="mcard" data-ctx="pro" data-comp="securite patrimoine incidents">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Aperçu/Aperçu-console-bitdefender.png" alt="Aperçu-doc-prescom" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
+          <div class="mcard-img">
+            <img src="apercus/console-bitdefender.jpg" alt="Console d'administration de l'antivirus Bitdefender" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Sécuriser les équipements · Gérer le patrimoine</div>
-            <div class="mcard-title">Administrations du logiciel anti-virus de l'entreprise</div>
-            <div class="mcard-desc">Gestion et maintenance du logiciel anti-virus BitDefender et de ses licences pour tous les postes de l'entreprise.</div>
+            <div class="mcard-title">Administration de l'antivirus de l'entreprise</div>
+            <div class="mcard-desc">Gestion et maintenance de l'antivirus Bitdefender et de ses licences pour tous les postes de l'entreprise.</div>
             <div class="mcard-foot">
-              <div class="tags"><span class="tag">anti-virus</span><span class="tag">Gestion</span><span class="tag">Maintenance</span><span class="tag">Sécurité</span></div>
+              <div class="tags"><span class="tag">Antivirus</span><span class="tag">Gestion</span><span class="tag">Maintenance</span><span class="tag">Sécurité</span></div>
             </div>
           </div>
         </div>
 
-                  <!-- Création de profil utilisateurs et administrateurs -->
+        <!-- Création de profils utilisateurs et administrateurs -->
         <div class="mcard" data-ctx="pro" data-comp="securite service patrimoine">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Image/prescom logo fond blanc.webp" alt="prescom logo fond blanc" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
+          <div class="mcard-img">
+            <img src="images/logo-prescom-blanc.webp" alt="Logo Prescom — gestion des profils utilisateurs" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Sécuriser les équipements · Mettre à disposition un service</div>
-            <div class="mcard-title">Création de profil utilisateurs et administrateurs</div>
+            <div class="mcard-title">Création de profils utilisateurs et administrateurs</div>
             <div class="mcard-desc">Création et gestion des profils utilisateurs et administrateurs pour l'ensemble des postes de l'entreprise.</div>
             <div class="mcard-foot">
-              <div class="tags"><span class="tag">utilisateurs</span><span class="tag">administrateurs</span><span class="tag">Gestion</span><span class="tag">Sécurité</span></div>
+              <div class="tags"><span class="tag">Utilisateurs</span><span class="tag">Administrateurs</span><span class="tag">Gestion</span><span class="tag">Sécurité</span></div>
             </div>
           </div>
         </div>
 
-          <!-- Présentation du service IT à deux stagiaire de lycée -->
+        <!-- Présentation du service IT à deux stagiaires de lycée -->
         <div class="mcard" data-ctx="pro" data-comp="service projet">
-          <div class="mcard-img" style="height:160px;overflow:hidden;">
-            <img src="Image/prescom logo fond blanc.webp" alt="prescom logo fond blanc" style="width:100%;height:100%;object-fit:cover;object-position:left top;">
+          <div class="mcard-img">
+            <img src="images/logo-prescom-blanc.webp" alt="Logo Prescom — présentation du service informatique" loading="lazy">
             <div class="ctx-pill ctx-pro">Pro</div>
           </div>
           <div class="mcard-body">
             <div class="mcard-comp">Mettre à disposition un service · Travailler en mode projet</div>
-            <div class="mcard-title">Présentation du service IT à deux stagiaire de lycée</div>
-            <div class="mcard-desc">Présentation et explication du service informatique à destination de deux stagiaires de lycée. Intervention au sein d'un service de l'entreprise accompagné des stagiaires.</div>
+            <div class="mcard-title">Présentation du service IT à deux stagiaires de lycée</div>
+            <div class="mcard-desc">Présentation et explication du service informatique à deux stagiaires de lycée. Intervention au sein d'un service de l'entreprise, accompagné des stagiaires.</div>
             <div class="mcard-foot">
               <div class="tags"><span class="tag">Présentation</span><span class="tag">Stagiaires</span><span class="tag">IT</span></div>
             </div>
@@ -2204,7 +2162,7 @@
         <div class="mcard" data-ctx="E6" data-comp="projet service">
           <div class="mcard-img">
             <div class="mcard-img-placeholder">
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                 <line x1="16" y1="2" x2="16" y2="6" />
                 <line x1="8" y1="2" x2="8" y2="6" />
@@ -2229,8 +2187,7 @@
         <div class="mcard" data-ctx="ecole" data-comp="service patrimoine">
           <div class="mcard-img">
             <div class="mcard-img-placeholder">
-              <!-- <img src="img/services-deploy.png" alt="Déploiement services"> -->
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
                 <line x1="8" y1="21" x2="16" y2="21" />
                 <line x1="12" y1="17" x2="12" y2="21" />
@@ -2251,11 +2208,9 @@
         </div>
 
         <!-- TABLEAU DE SYNTHÈSE -->
-         <div class="mcard" data-ctx="ecole" data-comp="projet certif">
+        <div class="mcard" data-ctx="ecole" data-comp="projet certif">
           <div class="mcard-img">
-            <div class="mcard-img-placeholder">
-              <img src="Aperçu/Aperçu du tableau de synthèse des réalisations professionnelles.png" alt="certif Secnum">
-            </div>
+            <img src="apercus/tableau-synthese.png" alt="Aperçu du tableau de synthèse des réalisations professionnelles" loading="lazy">
             <div class="ctx-pill ctx-ecole">École</div>
           </div>
           <div class="mcard-body">
@@ -2266,12 +2221,13 @@
               <div class="tags"><span class="tag">BTS SIO</span><span class="tag">Tableau</span><span
                   class="tag">Activité</span></div>
             </div>
-            <a href="TABLEAU DE SYNTHESE BTS SIO 2026 – Copie.xlsx" target="_blank" class="btn-green" style="margin-top:0.9rem;width:100%;justify-content:center;">
-              Télécharger
-            </a>
+            <div class="mcard-actions">
+              <a href="tableau-synthese-bts-sio-2026.xlsx" download class="btn-green">Télécharger (Excel)</a>
+            </div>
           </div>
         </div>
 
+        <p class="mgrid-empty" id="mgrid-empty" hidden>Aucune réalisation ne correspond à ces filtres.</p>
       </div>
     </section>
 
@@ -2287,7 +2243,7 @@
 
           <div class="lab-card">
             <div class="lab-img">
-              <img src="Aperçu/Aperçu Lab-Perso Infra.png" alt="Lab VirtualBox infrastructure">
+              <img src="apercus/lab-infra.jpg" alt="Infrastructure virtualisée du lab personnel sous VirtualBox" loading="lazy">
               <div class="lab-badge">
                 <div class="pulse"></div>VirtualBox
               </div>
@@ -2308,7 +2264,7 @@
 
           <div class="lab-card">
             <div class="lab-img">
-              <img src="Image/Virtubox image.png" alt="Lab VirtualBox liste machines">
+              <img src="apercus/virtualbox-vms.jpg" alt="Liste des machines virtuelles du lab dans VirtualBox" loading="lazy">
               <div class="lab-badge">
                 <div class="pulse"></div>Machines virtuelles
               </div>
@@ -2337,8 +2293,37 @@
       <section id="veille">
         <div class="eyebrow">Veille technologique</div>
         <h2 class="sec-title">Veille Technologique</h2>
-        <p class="sec-sub">Comment je reste à jour sur les dernières menaces, vulnérabilités et technologies.</p>
+        <p class="sec-sub">Comment je reste à jour sur les dernières menaces, vulnérabilités et technologies : une collecte
+          automatique (push) avec Feedly et Google Alertes, complétée par des recherches ciblées (pull) sur des sources
+          vérifiées.</p>
 
+        <!-- OUTILS DE VEILLE -->
+        <div class="filter-label">Mes outils de veille</div>
+        <div class="veille-sources veille-tools">
+          <div class="vsrc">
+            <div class="vsrc-title">Feedly — agrégateur de flux RSS</div>
+            <div class="vsrc-desc">Regroupe sur une seule page les nouveaux articles de mes sources, avec tri et filtrage.
+              Mes sources y sont rangées en collections, une par sujet de veille.</div>
+            <div class="vsrc-ex">Collections</div>
+            <div class="vsrc-quote">« Cybersécurité » : CERT-FR, BleepingComputer, The Hacker News, SecurityWeek, Le Monde
+              Informatique</div>
+            <div class="vsrc-quote" style="margin-top:0.4rem;">« Biocomputing » : Futura Sciences, Journal du Geek,
+              Presse-citron, Le Monde Informatique</div>
+          </div>
+          <div class="vsrc">
+            <div class="vsrc-title">Google Alertes</div>
+            <div class="vsrc-desc">M'envoie un courriel dès qu'une nouvelle page correspond à mes mots-clés. Contrairement
+              à Feedly, il explore tout le web, sans dépendre des flux RSS.</div>
+            <div class="vsrc-ex">Mots-clés suivis</div>
+            <div class="tags">
+              <span class="tag">PHP2Shell</span><span class="tag">Black October</span><span class="tag">faille PHP</span>
+              <span class="tag">IA cybersécurité</span><span class="tag">intelligence organoïde</span>
+              <span class="tag">biocomputing</span><span class="tag">Cortical Labs</span><span class="tag">FinalSpark</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-label">Mes sources</div>
         <div class="veille-sources">
           <div class="vsrc">
 
@@ -2371,28 +2356,59 @@
             <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="vf-link">Visiter →</a>
           </div>
           <div class="vsrc">
-
             <div class="vsrc-title">RFI</div>
-            <div class="vsrc-desc">
-            </div>
+            <div class="vsrc-desc">Radio France Internationale — actualité internationale, dont les enjeux tech, IA et défense.</div>
             <div class="vsrc-ex">Dernier exemple</div>
-            <div class="vsrc-quote">"Défense: l'accord entre OpenAI et l'armée américaine pose de multiples questions"
-              <a href="https://www.rfi.fr/fr/am%C3%A9riques/20260228-d%C3%A9fense-l-accord-entre-open-ai-et-l-arm%C3%A9e-am%C3%A9ricaine-pose-de-multiples-questions."
-                target="_blank" class="vf-link">Visiter →</a>
-            </div>
+            <div class="vsrc-quote">"Défense: l'accord entre OpenAI et l'armée américaine pose de multiples questions"</div>
+            <a href="https://www.rfi.fr/fr/am%C3%A9riques/20260228-d%C3%A9fense-l-accord-entre-open-ai-et-l-arm%C3%A9e-am%C3%A9ricaine-pose-de-multiples-questions."
+              target="_blank" class="vf-link">Visiter →</a>
           </div>
         </div>
 
-        <div class="veille-focus">
-          <div>
-            <div class="vf-pill">Focus Veille</div>
-            <div class="vf-title">OpenAI & le Pentagone : l'IA au cœur de la défense américaine.</div>
-            <div class="vf-desc">En février 2026, OpenAI signe un contrat de 200M$ avec l'armée américaine, après
-              qu'Anthropic ait refusé de lever ses restrictions éthiques et se soit fait blacklister. Une question
-              s'impose : peut-on vraiment confier des décisions militaires à une IA ?</div>
-            <a href="Focus_Veille_OpenAI_contrat_militaire.pdf" target="_blank" class="vf-link">Lire l'analyse
-              complète</a>
-          </div>
+        <!-- DOSSIERS DE VEILLE -->
+        <div class="filter-label" style="margin-top:3rem;">Mes dossiers de veille</div>
+        <div class="veille-docs">
+
+          <article class="vdoc">
+            <div class="vdoc-head vdoc-red">
+              <span class="vf-pill">Cybersécurité</span>
+              <div class="vdoc-stat"><b>70 %</b> des sites web tournent sous PHP</div>
+            </div>
+            <div class="vdoc-body">
+              <div class="vdoc-date">Octobre 2026 · Dossier complet</div>
+              <h3 class="vf-title">Black October : l'IA et les failles PHP2Shell</h3>
+              <p class="vf-desc">Le 21 octobre 2026, PHP publie en urgence des correctifs pour deux failles critiques
+                (CVE-2026-109618 / 109619) permettant de prendre le contrôle d'un serveur web à distance, sans mot de
+                passe. Présentes depuis plus de dix ans, elles ont été découvertes avec l'aide de l'IA. Analyse
+                technique, impacts pour un administrateur SISR, remédiation et cadre réglementaire.</p>
+              <div class="tags"><span class="tag g">CVE</span><span class="tag">RCE</span><span class="tag">PHP</span><span class="tag">CERT-FR</span><span class="tag">Patch management</span></div>
+              <div class="vdoc-actions">
+                <button class="btn-outline" onclick="openModal('php2shell')">Lire</button>
+                <a href="veilles/veille-black-october-php2shell.pdf" download class="btn-green">Télécharger le PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="vdoc">
+            <div class="vdoc-head vdoc-blue">
+              <span class="vf-pill">Innovation</span>
+              <div class="vdoc-stat"><b>20 W</b> consommés par un cerveau humain</div>
+            </div>
+            <div class="vdoc-body">
+              <div class="vdoc-date">Octobre 2026 · Dossier complet</div>
+              <h3 class="vf-title">L'intelligence organoïde : des ordinateurs à neurones vivants</h3>
+              <p class="vf-desc">Des ordinateurs calculent déjà avec des neurones humains cultivés en laboratoire : le
+                CL1 de Cortical Labs a appris à jouer à Doom, et le premier rack de serveurs biologiques a ouvert à
+                Singapour. Fonctionnement, acteurs (Cortical Labs, FinalSpark), lien avec les datacenters, avantages,
+                limites et questions éthiques.</p>
+              <div class="tags"><span class="tag g">Wetware</span><span class="tag">Datacenter</span><span class="tag">Énergie</span><span class="tag">Éthique</span></div>
+              <div class="vdoc-actions">
+                <button class="btn-outline" onclick="openModal('organoide')">Lire</button>
+                <a href="veilles/veille-intelligence-organoide.pdf" download class="btn-green">Télécharger le PDF</a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
 
@@ -2420,7 +2436,7 @@
               <div class="scard-url">linkedin.com/in/joshua-bernard-28182138b</div>
             </div>
           </a>
-          <a href="https://github.com/" target="_blank" class="scard">
+          <a href="https://github.com/Jojo-1008" target="_blank" class="scard">
             <div class="scard-logo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
                 <path
@@ -2465,16 +2481,14 @@
             <div class="modal-meta" id="modal-meta">Joshua Bernard</div>
           </div>
         </div>
-        <button class="modal-close" onclick="closeModal()">✕</button>
+        <button class="modal-close" type="button" aria-label="Fermer" onclick="closeModal()">✕</button>
       </div>
       <div class="modal-pdf-wrap">
         <iframe id="modal-iframe" src="" title="Aperçu"></iframe>
       </div>
       <div class="modal-footer">
-        <div class="modal-note">
-          <strong>Données personnelles :</strong> Coordonnées présentes pour faciliter la recherche de stage/alternance.
-        </div>
-        <a id="modal-dl" href="#" target="_blank" class="btn-green">Télécharger</a>
+        <div class="modal-note" id="modal-note"></div>
+        <a id="modal-dl" href="#" download class="btn-green">Télécharger le PDF</a>
       </div>
     </div>
   </div>
@@ -2488,7 +2502,7 @@
             <div class="modal-meta" id="imageModalMeta">Réalisation</div>
           </div>
         </div>
-        <button class="modal-close" onclick="closeImageModal()">✕</button>
+        <button class="modal-close" type="button" aria-label="Fermer" onclick="closeImageModal()">✕</button>
       </div>
       <div class="modal-image-wrap">
         <img id="imageModalImg" src="" alt="Aperçu de la réalisation" />
@@ -2498,55 +2512,81 @@
 
   <script>
     /* ===== FILTRES MISSIONS ===== */
-    /* Contexte : un seul actif */
-    let activeCtx = 'all';
+    /* Un seul choix actif par rangée (contexte et compétence) */
+    const filters = { ctx: 'all', comp: 'all' };
+    const cards = [...document.querySelectorAll('#mgrid .mcard')];
+    const chips = [...document.querySelectorAll('.chip[data-filter]')];
 
-    /* Compétences : multi-select — toutes actives par défaut */
-    let activeComps = new Set(['patrimoine', 'incidents', 'service', 'projet', 'securite', 'conformite', 'certif']);
-
-    function fCtx(btn, val) {
-      document.querySelectorAll('#ctx-row .chip').forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-      activeCtx = val;
-      applyFilters();
-    }
-
-    function fComp(btn, val) {
-      if (activeComps.has(val)) {
-        activeComps.delete(val);
-        btn.classList.remove('on');
-      } else {
-        activeComps.add(val);
-        btn.classList.add('on');
-      }
-      applyFilters();
+    function matches(card, ctx, comp) {
+      return (ctx === 'all' || card.dataset.ctx === ctx) &&
+        (comp === 'all' || card.dataset.comp.split(' ').includes(comp));
     }
 
     function applyFilters() {
-      document.querySelectorAll('#mgrid .mcard').forEach(card => {
-        const ctx = card.dataset.ctx;
-        const cardComps = (card.dataset.comp || '').split(/\s+/).filter(Boolean);
-        const okCtx = activeCtx === 'all' || ctx === activeCtx;
-        const okComp = cardComps.length === 0 ? true : cardComps.some(comp => activeComps.has(comp));
-        card.style.display = (okCtx && okComp) ? '' : 'none';
+      let visible = 0;
+      cards.forEach(card => {
+        const ok = matches(card, filters.ctx, filters.comp);
+        card.style.display = ok ? '' : 'none';
+        visible += ok;
+      });
+      document.getElementById('mgrid-empty').hidden = visible > 0;
+
+      /* Compteur de chaque bouton, en tenant compte du choix de l'autre rangée */
+      chips.forEach(chip => {
+        const f = { ...filters, [chip.dataset.filter]: chip.dataset.val };
+        const n = cards.filter(card => matches(card, f.ctx, f.comp)).length;
+        chip.querySelector('.chip-count').textContent = n;
+        chip.classList.toggle('empty', n === 0);
       });
     }
 
+    chips.forEach(chip => {
+      chip.type = 'button';
+      chip.setAttribute('aria-pressed', chip.classList.contains('on'));
+      chip.insertAdjacentHTML('beforeend', ' <span class="chip-count"></span>');
+      chip.addEventListener('click', () => {
+        filters[chip.dataset.filter] = chip.dataset.val;
+        chips.filter(c => c.dataset.filter === chip.dataset.filter).forEach(c => {
+          c.classList.toggle('on', c === chip);
+          c.setAttribute('aria-pressed', c === chip);
+        });
+        applyFilters();
+      });
+    });
+    applyFilters();
+
+    /* ===== MENU MOBILE ===== */
+    const nav = document.getElementById('nav');
+
+    function toggleNav(force) {
+      const open = nav.classList.toggle('open', force);
+      const btn = nav.querySelector('.nav-toggle');
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    }
+
+    nav.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => toggleNav(false)));
+
     /* ===== MODALE PDF ===== */
     const docs = {
-      cv: { src: 'cv.pdf', dl: 'cv.pdf', title: 'Curriculum Vitae', meta: 'Joshua Bernard · BTS SIO SISR · 2025' },
-      synthese: { src: 'GRILLE_EVAL_TABLEAU_SYNTHESE_Modifier.png', dl: 'GRILLE_EVAL_TABLEAU_SYNTHESE_Modifier.png', title: 'Tableau de Synthèse', meta: 'Grille d\'évaluation BTS SIO SISR' },
-      e6pg: { src: 'e6-page-de-garde.pdf', dl: 'e6-page-de-garde.pdf', title: 'Dossier E6 — Page de garde', meta: 'BTS SIO SISR' },
-      e6r1: { src: 'e6-realisation-1.pdf', dl: 'e6-realisation-1.pdf', title: 'Réalisation Pro 1', meta: 'Dossier E6 · BTS SIO SISR' },
-      e6r2: { src: 'e6-realisation-2.pdf', dl: 'e6-realisation-2.pdf', title: 'Réalisation Pro 2', meta: 'Dossier E6 · BTS SIO SISR' },
+      cv: { src: 'cv.pdf', title: 'Curriculum Vitae', meta: 'Joshua Bernard · BTS SIO SISR · 2025',
+        note: '<strong>Données personnelles :</strong> Coordonnées présentes pour faciliter la recherche de stage/alternance.' },
+      php2shell: { src: 'veilles/veille-black-october-php2shell.pdf', title: 'Black October : l\'IA et les failles PHP2Shell', meta: 'Veille technologique · Octobre 2026' },
+      organoide: { src: 'veilles/veille-intelligence-organoide.pdf', title: 'L\'intelligence organoïde', meta: 'Veille technologique · Octobre 2026' },
+      tp1: { src: 'documentations/tp1.pdf', title: 'TP1 — Pare-feu pfSense sous VirtualBox', meta: 'Documentation technique · BTS SIO SISR' },
+      tp2: { src: 'documentations/tp2.pdf', title: 'TP2 — DNS et DHCP sous Windows Server 2019', meta: 'Documentation technique · BTS SIO SISR' },
+      tp3: { src: 'documentations/tp3.pdf', title: 'TP3 — Active Directory et clients Windows / Debian', meta: 'Documentation technique · BTS SIO SISR' },
+      secnum: { src: 'certifications/certificat-secnum.pdf', title: 'Attestation SecNumacadémie — ANSSI', meta: 'Certification · Janvier 2026' },
+      cnil: { src: 'certifications/certificat-cnil.pdf', title: 'Certificat Atelier RGPD — CNIL', meta: 'Certification · 6 modules' },
     };
 
     function openModal(key) {
       const d = docs[key];
-      document.getElementById('modal-iframe').src = d.src;
+      document.getElementById('modal-iframe').src = d.src + '#view=FitH';
       document.getElementById('modal-title').textContent = d.title;
       document.getElementById('modal-meta').textContent = d.meta;
-      document.getElementById('modal-dl').href = d.dl;
+      document.getElementById('modal-note').innerHTML = d.note || '<strong>Joshua Bernard</strong> · BTS SIO SISR';
+      document.getElementById('modal-dl').href = d.src;
       document.getElementById('modal').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -2569,6 +2609,7 @@
       const meta = card.querySelector('.mcard-comp')?.textContent?.trim() || 'Réalisation';
 
       document.getElementById('imageModalImg').src = img.src;
+      document.getElementById('imageModalImg').alt = img.alt;
       document.getElementById('imageModalTitle').textContent = title;
       document.getElementById('imageModalMeta').textContent = meta;
       document.getElementById('imageModal').classList.add('open');
@@ -2585,47 +2626,31 @@
       if (e.target === document.getElementById('imageModal')) closeImageModal();
     }
 
+    /* Clic sur une carte : ouvre son document s'il en a un (data-doc), sinon agrandit l'image */
     document.querySelectorAll('#mgrid .mcard').forEach(card => {
-      const img = card.querySelector('img');
-      if (!img) return;
+      if (!card.dataset.doc && !card.querySelector('img')) return;
+      const open = () => card.dataset.doc ? openModal(card.dataset.doc) : openImageModal(card);
+      const title = card.querySelector('.mcard-title').textContent.trim();
 
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', () => openImageModal(card));
-
-      const title = card.querySelector('.mcard-title')?.textContent?.trim() || '';
-      const isCertificationCard = title.includes('Certification');
-
-      if (isCertificationCard) {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'btn-outline';
-        btn.style.marginTop = '0.9rem';
-        btn.style.width = '100%';
-        btn.style.justifyContent = 'center';
-        btn.innerHTML = `
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M3 3h18v18H3z" />
-            <path d="M8 13l3-3 2 2 3-4" />
-            <circle cx="8.5" cy="8.5" r="1.2" />
-          </svg>
-          Voir l'image
-        `;
-        btn.onclick = (e) => {
-          e.stopPropagation();
-          openImageModal(card);
-        };
-
-        const foot = card.querySelector('.mcard-foot');
-        if (foot) {
-          foot.insertAdjacentElement('afterend', btn);
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', (card.dataset.doc ? 'Ouvrir le document : ' : 'Agrandir l\'image : ') + title);
+      card.addEventListener('click', e => {
+        if (!e.target.closest('a, button, details')) open();
+      });
+      card.addEventListener('keydown', e => {
+        if (e.target === card && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          open();
         }
-      }
+      });
     });
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         closeModal();
         closeImageModal();
+        toggleNav(false);
       }
     });
   </script>
